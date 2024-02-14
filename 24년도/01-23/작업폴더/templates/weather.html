@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div>
+        <h1>기상청 공공데이터 API 자료</h1>
+    </div>
+
+    <div>
+        {% if datas %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>지점</th>
+                        <th>날짜</th>
+                        <th>최고기온</th>
+                        <th>최저기온</th>
+                        <th>강수량</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in datas %}
+                        <tr>
+                            <td>{{ item['지점'] }}</td>
+                            <td>{{ item['날짜'] }}</td>
+                            <td>{{ item['최고기온'] }}</td>
+                            <td>{{ item['최저기온'] }}</td>
+                            <td>{{ item['강수량'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>데이터가 없습니다.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

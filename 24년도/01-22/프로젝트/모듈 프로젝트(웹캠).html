@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모듈 프로젝트</title>
+    <style>
+        #webcam {
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+    <h1>웹캠</h1>
+
+    <video id="webcam" width="640" height="480" autoplay></video>
+    <script>
+        const video = document.getElementById("webcam");
+
+        // 웹캠 스트림 가져오기
+        async function startWebcam() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error("Error accessing webcam:", error);
+            }
+        }
+
+        // 페이지 로드 후 웹캠 가져오기 실행
+        window.addEventListener("load", () => {
+            startWebcam();
+        });
+    </script>
+
+    <h4>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h4>
+    <div><button onclick="goToPage2()">이전 페이지로</button></div>
+
+    <script>
+        function goToPage2() {
+            // 페이지 이동
+            window.location.href = "모듈 프로젝트1.html";
+        }
+    </script>
+</body>
+</html>
