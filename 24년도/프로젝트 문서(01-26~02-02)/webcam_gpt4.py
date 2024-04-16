@@ -1,4 +1,4 @@
-api_key = "AIzaSyC1Ax9tlpuKI8qC7hh0RVnUNkJYrAOJe10"
+api_key = "MY_API_KEY"
 
 import cv2
 import mediapipe as mp
@@ -98,7 +98,7 @@ def head_nod_algorithm(left_eye,right_eye,poseLandmarks,steps,avg_hori,avg_vert)
     return ListReturn
 
 def speech_recognator(firstLocation,condition):
-    api_key = "AIzaSyC1Ax9tlpuKI8qC7hh0RVnUNkJYrAOJe10"
+    api_key = "MY_API_KEY"
     # 1) 음성 인식기
     condition = True
     while condition == True:
@@ -204,7 +204,7 @@ def speak_with_country_code(country_code):
         time.sleep(1)
 
 def get_street_view_image( loc, ph):
-    api_key = "AIzaSyC1Ax9tlpuKI8qC7hh0RVnUNkJYrAOJe10"
+    api_key = "MY_API_KEY"
     base_url = "https://maps.googleapis.com/maps/api/streetview"
     fov = 90
     #print("fov",fov)
